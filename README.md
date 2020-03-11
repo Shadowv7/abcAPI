@@ -8,7 +8,7 @@ __abcAPI__
 ##### Example:
   Discord.js 11 and 12
 ```js
-const abcAPI = require('abcapi');
+const abc = require('abcapi');
 
 const { Client } = require('discord.js'),
     client = new Client();
@@ -16,9 +16,8 @@ const { Client } = require('discord.js'),
 client.login('Bot TOKEN');
 
 client.on('ready',() => {
-    abcAPI.login("API Token", client.user.id); // => require to use this module, log in to abcAPI
-    abcAPI.update(client); // => updates every 10 minutes
-    abcAPI.post(client); // => made simple post to this abcAPI
+const abcApi = new abc("API TOKEN",client.user.id) // => require to use this module, log in to abcAPI
+abcAPI.postStats(client); // => made simple post to this abcAPI
 });
 ```
 
@@ -27,9 +26,9 @@ Eris Sharder
 ```js
 //On your ready event 
 
-const abcAPI = require('abcapi');
-        abcAPI.login('token', this.bot.user.id);
-        abcAPI.post(this.bot);
+const abc = require('abcapi');
+const abcAPI = new abc("API TOKEN",this.bot.user.id)
+abcAPI.postStats(this.bot);
 ```
 
 ___
