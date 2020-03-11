@@ -5,8 +5,7 @@ const { Client } = require('discord.js'),
 
 client.login("Bot TOKEN");
 
-client.on('ready',() =>{
-    abcAPI.login(AbcToken, client.user.id); // => require to use this module, log in to abcAPI
-    abcAPI.update(client); // => updates every 10 minutes
-    abcAPI.post(client); // => made simple post to this abcAPI
+client.on('ready',() =>{    
+const abcApi = new abc("API TOKEN",client.user.id) // => require to use this module, log in to abcAPI
+abcAPI.postStats(client); // => made simple post to this abcAPI
 });
